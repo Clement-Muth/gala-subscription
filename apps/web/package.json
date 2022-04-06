@@ -1,0 +1,18 @@
+{
+  "name": "@gala-inscription/web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cp ../../.env.local ./ && next build && next export && mv out/404/index.html out/404.html && rm -rf out/404",
+    "dev": "cp ../../.env.local ./ && cross-env DEBUG=app:* next --port 3005",
+    "deploy": "firebase deploy --only hosting",
+    "start": "next start",
+    "export": "next export",
+    "lint": "next lint",
+    "compile": "tsc -p .",
+    "emulate": "firebase emulators:start"
+  },
+  "devDependencies": {
+    "config": "*"
+  }
+}

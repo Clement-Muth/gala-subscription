@@ -1,0 +1,63 @@
+{
+  "name": "gala-inscription",
+  "version": "1.0.0",
+  "description": "webapp for the gala",
+  "main": "index.js",
+  "repository": "https://github.com/Clement-Muth/gala-inscription.git",
+  "author": "Clément Muth <clementmuth@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "turbo run dev --parallel",
+    "emulate": "yarn --cwd apps/web emulate"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.3",
+    "@rebass/forms": "^4.0.6",
+    "cross-env": "^7.0.3",
+    "firebase": "8.10.1",
+    "next": "^12.1.0",
+    "next-seo": "^5.3.0",
+    "react": "^17.0.2",
+    "react-dropzone": "^12.0.4",
+    "react-dom": "^17.0.2",
+    "rebass": "^4.0.7",
+    "turbo": "^1.1.10"
+  },
+  "devDependencies": {
+    "@types/firebase": "^3.2.1",
+    "@types/next": "^9.0.0",
+    "@types/next-seo": "^2.1.2",
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "@types/react-dropzone": "^5.1.0",
+    "@types/rebass": "^4.0.10",
+    "@types/rebass__forms": "^4.0.6",
+    "next-pwa": "^5.4.6"
+  },
+  "packageManager": "yarn@1.22.17"
+}
