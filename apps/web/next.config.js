@@ -12,11 +12,12 @@ const nextConfig = {
     STORAGE_BUCKET: process.env.STORAGE_BUCKET,
     MESSAGEING_SENDER_ID: process.env.MESSAGEING_SENDER_ID,
     APP_ID: process.env.APP_ID,
-    API_KEY_VISION: process.env.API_KEY_VISION
+    API_KEY_VISION: process.env.API_KEY_VISION,
+    STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY
   },
   trailingSlash: true,
   compress: true,
-  swcMinify: true,
+  // swcMinify: true,
   experimental: {
     // ssr and displayName are configured by default
     styledComponents: true

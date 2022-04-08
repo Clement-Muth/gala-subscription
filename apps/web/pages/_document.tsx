@@ -10,11 +10,12 @@ const CustomDocument = () => (
       <meta name="theme-color" content="#13111c" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-      <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/steelfish" />
+      <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/steelfish" />
       <link
         href="https://db.onlinewebfonts.com/c/5dec1e12a2de089d8e76f394843834cb?family=Carta+Marina"
         rel="stylesheet"
       />
+      <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     </Head>
     <Box as="body" sx={{ bg: "#e7e6d6", p: 2 }}>
       <Main />

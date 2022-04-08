@@ -3,15 +3,13 @@ import { IS_DEV } from "./constants";
 export const defaultSeo = () => ({
   canonical: IS_DEV ? "http://localhost:3005" : "https://gala-inscription.web.app/",
   title: "Inscription gala fin d'année",
-  description:
-    "Une agence web pas comme les autres. Vous êtes un commerce ou une entreprise ? Vous avez besoin d’un site web efficace et performant à la pointe de la technologie. Il sera le point d’entrée de toutes vos communications !",
+  description: "Inscription au gala de fin d'année",
   openGraph: {
     type: "website",
     locale: "fr",
     url: "https://gala-inscription.web.app/",
     title: "Inscription gala fin d'année",
-    description:
-      "Une agence web pas comme les autres. Vous êtes un commerce ou une entreprise ? Vous avez besoin d’un site web efficace et performant à la pointe de la technologie. Il sera le point d’entrée de toutes vos communications !",
+    description: "Inscription au gala de fin d'année",
     defaultImageWidth: 3010,
     defaultImageHeight: 1657,
     images: [

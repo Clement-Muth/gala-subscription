@@ -17,11 +17,25 @@ export const FollowUs = () => {
           zIndex: -1
         }}
       />
-      <Flex px={6} height="100%" flexDirection="column" justifyContent="center">
+      <Flex
+        px={6}
+        height="100%"
+        flexDirection="column"
+        justifyContent="center"
+        sx={{
+          "@media screen and (max-width: 600px)": { px: 3 }
+        }}
+      >
         <Flex>
           <Flex flexDirection="column" height="100%" color="#e7e6d6" flex={1}>
             <Box mb={36}>
-              <Text as="h3" fontSize="50px" fontFamily="Pistilli" fontWeight={900}>
+              <Text
+                as="h3"
+                fontSize="50px"
+                fontFamily="Pistilli"
+                fontWeight={900}
+                sx={{ "@media screen and (max-width: 425px)": { fontSize: 36 } }}
+              >
                 Suivez-nous!
               </Text>
               <Text
@@ -30,9 +44,9 @@ export const FollowUs = () => {
                 fontFamily="Steelfish"
                 letterSpacing="1.04px"
                 lineHeight="68.2063px"
-                sx={{ textTransform: "uppercase" }}
+                sx={{ textTransform: "uppercase", "@media screen and (max-width: 425px)": { fontSize: 36 } }}
               >
-                Restez connecté avec nous? <br /> Suivez-nous ici:
+                Restez connecté? <br /> Retrouvez-nous ici:
               </Text>
             </Box>
             <Flex as="ul" pl={0} sx={{ borderTop: "solid 2px #e7e6d6", borderBottom: "solid 2px #e7e6d6" }}>
@@ -114,7 +128,12 @@ export const FollowUs = () => {
             </Flex>
           </Flex>
 
-          <Flex flex={1} />
+          <Flex
+            flex={1}
+            sx={{
+              "@media screen and (max-width: 1000px)": { display: "none" }
+            }}
+          />
         </Flex>
       </Flex>
     </Box>

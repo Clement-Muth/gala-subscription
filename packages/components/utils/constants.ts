@@ -10,3 +10,5 @@ export const firebaseConfig = {
 };
 
 export const api_key_vision = process.env.API_KEY_VISION!;
+
+export const stripe_public_key = process.env.STRIPE_PUBLIC_KEY!;

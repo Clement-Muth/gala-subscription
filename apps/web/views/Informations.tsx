@@ -1,33 +1,59 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Flex, Link, Text } from "rebass";
 import EuroIcon from "@mui/icons-material/Euro";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import LocalBarIcon from "@mui/icons-material/LocalBar";
+import { database } from "components/libraries/firebase";
 
 export const Informations = () => {
   const [seePosterHover, setSeePosterHover] = useState(false);
+  const [reserved, setReserved] = useState(0);
+
+  useEffect(() => {
+    database.user.onSnapshot((doc) => setReserved(doc.docs.length));
+  }, [0]);
 
   return (
-    <Box bg="#fcf5ef" px={6} py={6} sx={{ position: "relative", zIndex: 30 }}>
+    <Box
+      bg="#fcf5ef"
+      px={6}
+      py={6}
+      sx={{
+        position: "relative",
+        zIndex: 30,
+        "@media screen and (max-width: 1050px)": { px: 4 }
+      }}
+    >
       <Text as="h3" mb={2} color="#c0a9a1" fontSize={2} letterSpacing=".25em" sx={{ textTransform: "uppercase" }}>
         Informations sur <br />
         <Text
           as="span"
           fontSize={130}
           lineHeight={1.1}
-          sx={{ font: "400 normal 130px/.8 Carta Marina,Georgia,Times New Roman,serif" }}
+          sx={{
+            font: "400 normal 130px/.8 Carta Marina,Georgia,Times New Roman,serif",
+            "@media screen and (max-width: 1333px)": { fontSize: "80px" },
+            "@media screen and (max-width: 950px)": { fontSize: "64px" },
+            "@media screen and (max-width: 500px)": { fontSize: "32px" }
+          }}
         >
           L&apos;event
         </Text>
       </Text>
-      <Flex>
+      <Flex sx={{ "@media screen and (max-width: 700px)": { display: "block" } }}>
         <Flex
           flex={1}
           bg="#fff"
           height={600}
           py={6}
           px={5}
-          sx={{ borderRadius: 4, borderTopRightRadius: 0, position: "relative" }}
+          sx={{
+            borderRadius: 4,
+            borderTopRightRadius: 0,
+            position: "relative",
+            "@media screen and (max-width: 810px)": { py: 4 },
+            "@media screen and (max-width: 400px)": { px: 3 }
+          }}
         >
           <Box>
             <Text
@@ -51,7 +77,12 @@ export const Informations = () => {
               width="fit-content"
               onMouseEnter={() => setSeePosterHover(true)}
               onMouseLeave={() => setSeePosterHover(false)}
-              sx={{ position: "absolute", bottom: 128, cursor: "pointer" }}
+              sx={{
+                position: "absolute",
+                bottom: 128,
+                cursor: "pointer",
+                "@media screen and (max-width: 810px)": { bottom: 32 }
+              }}
             >
               <Link target="_blank" href="/static/images/gala-affiche.png" sx={{ textDecoration: "none" }}>
                 <Text as="p" color="#7a6a45" fontSize={4}>
@@ -74,7 +105,13 @@ export const Informations = () => {
           mt={-80}
           py={6}
           px={5}
-          sx={{ borderRadius: 4, borderBottomLeftRadius: 0, position: "relative" }}
+          sx={{
+            borderRadius: 4,
+            borderBottomLeftRadius: 0,
+            position: "relative",
+            "@media screen and (max-width: 700px)": { mt: 10 },
+            "@media screen and (max-width: 400px)": { px: 3 }
+          }}
         >
           <Box>
             <Text
@@ -85,7 +122,7 @@ export const Informations = () => {
               color="#c0a9a1"
               sx={{ textTransform: "uppercase" }}
             >
-              100 places restantes
+              {100 - reserved} places restantes
             </Text>
             <Box as="ul" pl={0} mt={5} sx={{ li: { listStyle: "none" } }}>
               <Flex as="li" alignItems="center">

@@ -12,6 +12,10 @@
     "compile": "tsc -p .",
     "emulate": "firebase emulators:start"
   },
+  "dependencies": {
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.22.0"
+  },
   "devDependencies": {
     "config": "*"
   }

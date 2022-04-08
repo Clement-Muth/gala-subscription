@@ -13,6 +13,7 @@ if (!firebase.apps.length) {
     firebase.firestore().useEmulator("localhost", 8080);
     firebase.auth().useEmulator("http://localhost:9099");
     firebase.storage().useEmulator("localhost", 9199);
+    firebase.app().functions("europe-west1").useEmulator("localhost", 5003);
   }
 }
 
@@ -22,6 +23,8 @@ export const database = {
     return { id: doc.id, ...doc.data() };
   }
 };
+
+export const functions = firebase.app().functions("europe-west1");
 
 export const auth = firebase.auth();
 

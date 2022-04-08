@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Carta Marina";
+  src: url("https://db.onlinewebfonts.com/t/5dec1e12a2de089d8e76f394843834cb.eot"); /* IE9*/
+  src: url("https://db.onlinewebfonts.com/t/5dec1e12a2de089d8e76f394843834cb.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("https://db.onlinewebfonts.com/t/5dec1e12a2de089d8e76f394843834cb.woff2") format("woff2"),
+    /* chrome firefox */ url("https://db.onlinewebfonts.com/t/5dec1e12a2de089d8e76f394843834cb.woff") format("woff"),
+    /* chrome firefox */ url("https://db.onlinewebfonts.com/t/5dec1e12a2de089d8e76f394843834cb.ttf") format("truetype"),
+    /* chrome firefox opera Safari, Android, iOS 4.2+*/
+      url("https://db.onlinewebfonts.com/t/5dec1e12a2de089d8e76f394843834cb.svg#Carta Marina") format("svg"); /* iOS 4.1- */
+}
