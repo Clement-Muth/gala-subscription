@@ -5,7 +5,7 @@ import { Countdown, countdown } from "components/utils/countdown";
 export const Head = () => {
   const [countdownValue, setCountdownValue] = useState<Countdown>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   useEffect(() => {
-    setInterval(() => setCountdownValue(countdown(new Date("2022/04/29/19:00"))), 1000);
+    setInterval(() => setCountdownValue(countdown(new Date("April 29, 2022 19:00:00"))), 1000);
   }, [0]);
 
   return (
